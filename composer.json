@@ -1,0 +1,16 @@
+{
+	"name":"cristiano",
+	"authors": [
+        {
+			"name":"Cristiano",
+			"email":"cristianodaraujo@teste.com"
+		}
+	],
+    "mininum-stability":"dev",
+	"autoload":{
+		"psr-4":{
+		    "src\\app\\classes\\": "src/app/classes/",
+		    "tests\\": "tests/"
+		}
+	}
+}
