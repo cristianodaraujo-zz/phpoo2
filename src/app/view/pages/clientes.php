@@ -2,8 +2,16 @@
 <pre>
 <?php
 
-use \src\app\classes\Types\ClientesPessoaFisica as Clientes;
+//use \src\app\classes\Types\ClientesPessoaFisica as Clientes;
 
+
+use \src\app\classes\Config\Connect;
+use \src\app\classes\Config\Crud;
+
+
+$clientes = new Crud(Connect::getDb());
+$dados =  $clientes->read();
+/*
 $clientes[0] = new Clientes(1, "Angelina Archibald", "angelina@email.com.br", "PF", 88888888888, 44435549, "Piauí", 777, "Centro", 15500000, "casa", 5, "Votuporanga", "SP");
 $clientes[0]
     ->setCelular(17977777777)
@@ -71,6 +79,8 @@ $clientes[4]
 //$clientes[7] = new Clientes(8, "Jenifer Souza", "12345678912", "jenifer@email.com.br", 32435549, "Bahia", 1, "Apto 07", "São Paulo", "15500-000", "São Paulo", "sp" );
 //$clientes[8] = new Clientes(9, "Carlos Jaspel", "12345678912", "carlos@email.com.br", 32435549, "Sergipe", 1, "casa", "São Paulo", "15500-000", "São Paulo", "sp" );
 //$clientes[9] = new Clientes(10, "Helena Goulart", "12345678912", "vitor@email.com.br", 32435549, "Av. Brasil", 1, null, "São Paulo", "15500-000", "São Paulo", "sp" );
+
+*/
 
 
 ?>
