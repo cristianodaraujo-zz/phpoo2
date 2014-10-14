@@ -10,9 +10,9 @@ class DataBaseAbstract extends Connect {
 
     public function read() {
 
-        $pdo = parent::getDb();
+        $connection = parent::getDb();
         try {
-            $listar = $pdo->prepare("SELECT * FROM " . self::$tabela);
+            $listar = $connection->prepare("SELECT * FROM " . self::$tabela);
             $listar->execute();
             $dados = $listar->fetchAll(\PDO::FETCH_ASSOC);
         }

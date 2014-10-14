@@ -6,13 +6,6 @@ use src\app\classes\Clientes;
 use src\app\classes\Types\ClientesPessoaFisica;
 use src\app\classes\Types\ClientesPessoaJuridica;
 
-
-/**
- * Class Crud
- * Classe responsável por fazer o CRUD com PDO ao banco de dados
- * @package src\app\classes\databases
- * @var PDO
- */
 class Crud {
 
     private $connect;
@@ -26,7 +19,7 @@ class Crud {
 
         try {
             $this->connect->beginTransaction();
-            $cadastrar = "INSERT INTO clientes (nome, email, tipo, cpf, telefone, rua, numero, bairro, cep, complemento, grauimportance, cidade, uf,celular, telcobr, fax,  ruacobr, numerocobr, complementocobr, bairrocobr, cepcobr, municipiocobr, ufcobr)
+            $cadastrar = "INSERT INTO clientes (nome, email, tipo, cpf, telefone, rua, numero, bairro, cep, complemento, grauimportance, cidade, uf, celular, telcobr, fax,  ruacobr, numerocobr, complementocobr, bairrocobr, cepcobr, municipiocobr, ufcobr)
                           VALUES (:nome, :email, :tipo, :cpf, :telefone, :rua, :numero, :bairro, :cep, :complemento, :grauimportance, :cidade, :uf, :celular, :telcobr, :fax, :ruacobr, :numerocobr,:complementocobr, :bairrocobr, :cepcobr, :municipiocobr, :ufcobr)";
             $dados = $this->connect->prepare($cadastrar);
             $dados->execute(array(
@@ -41,11 +34,11 @@ class Crud {
                 "cep"               => $clientes->getCep(),
                 "complemento"       => $clientes->getComplemento(),
                 "grauimportance"    => $clientes->getGrauImportance(),
-                "cidade"            => $clientes->getMunicipio(),
+                "municipio"         => $clientes->getMunicipio(),
                 "uf"                => $clientes->getUf(),
-                "celular"           => $clientes->getTelefone(),
+                "celular"           => $clientes->getCelular(),
                 "telcobr"           => $clientes->getTelCobr(),
-                "fax"               => $clientes->getTelCobr(),
+                "fax"               => $clientes->getFax(),
                 "ruacobr"           => $clientes->getRuaCobr(),
                 "numerocobr"        => $clientes->getNumeroCobr(),
                 "complementocobr"   => $clientes->getComplementoCobr(),

@@ -35,18 +35,18 @@ function startDatabase() {
         cep VARCHAR( 250 ) NOT NULL,
         complemento VARCHAR( 250 ) NOT NULL,
         grauimportance VARCHAR( 250 ) NOT NULL,
-        cidade VARCHAR( 250 ) NOT NULL,
-        uf VARCHAR( 250 ) NOT NULL,
-        celular VARCHAR( 250 ) NOT NULL,
-        fax VARCHAR( 250 ) NOT NULL,
-        telcobr VARCHAR( 250 ) NOT NULL,
-        ruacobr VARCHAR( 250 ) NOT NULL,
-        numerocobr VARCHAR( 250 ) NOT NULL,
-        complementocobr VARCHAR( 250 ) NOT NULL,
-        bairrocobr VARCHAR( 250 ) NOT NULL,
-        cepcobr VARCHAR( 250 ) NOT NULL,
-        municipiocobr VARCHAR( 250 ) NOT NULL,
-        ufcobr VARCHAR( 250 ) NOT NULL);";
+        municipio VARCHAR( 250 ) NOT NULL,
+        uf VARCHAR( 250 ) NULL,
+        celular VARCHAR( 250 ) NULL,
+        telcobr VARCHAR( 250 ) NULL,
+        fax VARCHAR( 250 ) NULL,
+        ruacobr VARCHAR( 250 ) NULL,
+        numerocobr VARCHAR( 250 ) NULL,
+        complementocobr VARCHAR( 250 ) NULL,
+        bairrocobr VARCHAR( 250 ) NULL,
+        cepcobr VARCHAR( 250 ) NULL,
+        municipiocobr VARCHAR( 250 ) NULL,
+        ufcobr VARCHAR( 250 ) NULL);";
         $connection->exec($sql);
     }
     catch (\PDOException $error) {
@@ -73,7 +73,7 @@ $insert->persist($clientes);
 $insert->flush();
 
 
-$clientes = new ClientesPessoaJuridica("Claudia Bertolin", "claudia@email.com.br", "PJ", 12345678912,  32435549, "Amazona", 1, "São Paulo",  "15500-000", "casa", 3, "São Paulo", "sp" );
+$clientes = new ClientesPessoaJuridica("Claudia Bertolin", "claudia@email.com.br", "PJ", 12345678912,  32435549, "Amazona", 1, "São Paulo",  "15500-000", "casa", 3, "São Paulo", "sp");
 $clientes
     ->setFax(5115151400)
     ->setTelCobr(32435339)
@@ -90,7 +90,7 @@ $insert->persist($clientes);
 $insert->flush();
 
 
-$clientes = new ClientesPessoaFisica("Felipe Marcio de Souza", "felipe@email.com.br", "PF", "12345678912", 32435549, "Pernanbuco", 100,  "São Paulo",  "15500-000", "casa", 2, "São Paulo", "sp" );
+$clientes = new ClientesPessoaFisica("Felipe Marcio de Souza", "felipe@email.com.br", "PF", "12345678912", 32435549, "Pernanbuco", 100,  "São Paulo",  "15500-000", "casa", 2, "São Paulo", "sp");
 $clientes
     ->setCelular(1888848488)
     ->setTelCobr(null)
@@ -107,7 +107,7 @@ $insert->persist($clientes);
 $insert->flush();
 
 
-$clientes = new ClientesPessoaJuridica("Maria Helena", "maria@email.com.br", "PJ", "12345678912", 32435549, "São Paulo", 481, "São Paulo", "15500-000", "Bloco 01 Sala 02", 5, "São Paulo", "sp" );
+$clientes = new ClientesPessoaJuridica("Maria Helena", "maria@email.com.br", "PJ", "12345678912", 32435549, "São Paulo", 481, "São Paulo", "15500-000", "Bloco 01 Sala 02", 5, "São Paulo", "sp");
 $clientes
     ->setFax(5115151400)
     ->setTelCobr(32435339)
@@ -124,7 +124,7 @@ $insert->persist($clientes);
 $insert->flush();
 
 
-$clientes = new ClientesPessoaFisica("Luciana Helena", "luci@email.com.br", "PF", "12345678912", 32435549, "Alagoas", 1, "São Paulo", "15500-000", "casa", 1, "São Paulo", "sp" );
+$clientes = new ClientesPessoaFisica("Luciana Helena", "luci@email.com.br", "PF", "12345678912", 32435549, "Alagoas", 1, "São Paulo", "15500-000", "casa", 1, "São Paulo", "sp");
 $clientes
     ->setCelular(1748484845)
     ->setTelCobr(null)
